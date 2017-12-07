@@ -23,15 +23,7 @@ button {color: blue;
     headers: {
       'Client-ID': "seq3e154mq3ar37nioysowjhka6y4i";
     }
-    success: function(channel)
-    {
-      if (channel["stream"] == null)
-      {
-        alert(nickname+" is not online");
-      } else {
-        alert(nickname+" is online!");
-      }
-    }
+    console.log("Checking status");
   });
 }
 CheckOnlineStatus();
