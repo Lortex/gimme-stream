@@ -13,6 +13,30 @@ button {color: blue;
   transition-duration: .1s;}
 </style>
 
+<script>
+  
+  function CheckOnlineStatus()
+{
+  $.ajax({
+    url: "https://api.twitch.tv/kraken/streams/filtahkeys",
+    dataType: 'json',
+    headers: {
+      'Client-ID': "seq3e154mq3ar37nioysowjhka6y4i";
+    }
+    success: function(channel)
+    {
+      if (channel["stream"] == null)
+      {
+        alert(nickname+" is not online");
+      } else {
+        alert(nickname+" is online!");
+      }
+    }
+  });
+}
+CheckOnlineStatus();
+</script>
+
 <center>
   <iframe src="https://player.twitch.tv/?channel=zizaran" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"> </iframe>
   <a href="" style="padding:2px 0px 4px; display:block;"></a>
